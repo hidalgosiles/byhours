@@ -1,0 +1,28 @@
+invoice:
+    title: 'Invoice'    
+    vat: 'VAT Number'
+    address: 'Address'
+    type: 'Account type'
+    biller:
+        title: 'Biller'
+        phone: 'Ph.'
+        email: 'Email'
+        cif: 'CIF'
+    summary:
+        title: 'Invoice Summary'
+        number: 'Invoice No.'
+        date: 'Invoice date'
+        total: 'Total'
+    customer:
+        title: 'Customer'
+    items:
+        title: 'Qty Item'
+        cost: 'Unit Cost'
+        vat: 'VAT%'
+        price: 'Price'
+        notes: 'Notes'
+        subtotal: 'Sub Total'
+        amount: 'Invoice Amount'
+    articles:
+        credit: 'Package of ''%string%'' messages/month.'
+        ip: 'Purchase of IP ''%string%''.'

@@ -1,0 +1,15 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: 5432
+    database_name: diagomail
+    database_user: leadiance
+    database_password: Lead2713
+    mailer_transport: smtp
+    mailer_encryption: null
+    mailer_auth_mode: plain
+    mailer_host: gmail
+    mailer_port: 25
+    mailer_user: hidalgosiles@gmail.com
+    mailer_password: 
+    secret: d589881fdb1a747c29c1601887dc2472b734fc79

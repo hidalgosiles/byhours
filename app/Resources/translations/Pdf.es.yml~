@@ -1,0 +1,28 @@
+invoice:
+    title: 'Factura'    
+    vat: 'VAT Número'
+    address: 'Dirección'
+    type: 'Tipo de cuenta'
+    biller:
+        title: 'Vendedor'
+        phone: 'Telf.'
+        email: 'Email'
+        cif: 'CIF'
+    summary:
+        title: 'Datos Factura'
+        number: 'Nº.'
+        date: 'Fecha'
+        total: 'Total'
+    customer:
+        title: 'Cliente'
+    items:
+        title: 'Cantidad'
+        cost: 'Coste unit.'
+        vat: 'IVA%'
+        price: 'Precio'
+        notes: 'Notas'
+        subtotal: 'Subtotal'
+        amount: 'Total'
+    articles:
+        credit: 'Paquete de ''%string%'' mensajes/mes.'
+        ip: 'Compra de IP ''%string%''.'

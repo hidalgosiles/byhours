@@ -1,0 +1,4 @@
+<?php return array (
+  0 => 9223372036854775807,
+  1 => 'a:2:{i:0;O:26:"Doctrine\\ORM\\Mapping\\Table":5:{s:4:"name";s:17:"webhook_event_log";s:6:"schema";N;s:7:"indexes";a:3:{i:0;O:26:"Doctrine\\ORM\\Mapping\\Index":4:{s:4:"name";s:20:"idx_1ea55ea08f0d6ea3";s:7:"columns";a:1:{i:0;s:16:"webhook_event_id";}s:5:"flags";N;s:7:"options";N;}i:1;O:26:"Doctrine\\ORM\\Mapping\\Index":4:{s:4:"name";s:20:"idx_1ea55ea0969f80c7";s:7:"columns";a:1:{i:0;s:19:"http_status_code_id";}s:5:"flags";N;s:7:"options";N;}i:2;O:26:"Doctrine\\ORM\\Mapping\\Index":4:{s:4:"name";s:20:"idx_1ea55ea0969f81c8";s:7:"columns";a:1:{i:0;s:14:"message_log_id";}s:5:"flags";N;s:7:"options";N;}}s:17:"uniqueConstraints";N;s:7:"options";a:0:{}}i:1;O:27:"Doctrine\\ORM\\Mapping\\Entity":2:{s:15:"repositoryClass";s:64:"\\Diagomail\\AppBundle\\Entity\\Repository\\WebhookEventLogRepository";s:8:"readOnly";b:0;}}',
+);

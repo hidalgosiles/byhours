@@ -1,0 +1,18 @@
+email_payment:
+    subject:
+        success: 'Confirmación de su pago a Diagomail %invoice%'
+        wrong: 'Error en su pago a Diagomail'
+    body:
+        success:
+            1: 'Hola %username%,'
+            2: 'Thanks for choosing Diagomail. This email is to confirm that we received payment
+               for order %invoice%. You can go to our website and download the invoice.'
+            3: 'The use of Diagomail software is subject to the terms and conditions as outlined in your invoice.'
+            4: 'Please contact us with any questions, we''re always happy to help.'
+        wrong:
+            1: 'Hello %username%,'
+            2: 'An error ocurred with your monthly pay.'
+            3: 'Contact the payment department to solve the problem, please.'
+    footer:
+        1: 'Un cordial saludo,'
+        2: 'El equipo Diagomail'
