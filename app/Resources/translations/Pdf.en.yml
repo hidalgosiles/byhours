@@ -1,0 +1,46 @@
+invoice:
+    title: 'Invoice'    
+    vat: 'VAT Number'
+    address: 'Address'
+    vat_title: 'VAT'
+    contact_label: 'Sales Contact' 
+    biller:
+        phone: 'Ph.'
+        email: 'Email'
+        cif: 'CIF'
+        type: 'Account type'
+    summary:
+        number: 'Invoice Number'
+        date: 'Invoice date'
+        reference: 'Reference'
+        service: 'Service'
+    customer:
+        title: 'Customer:'
+    items:
+        title: 'Description'
+        cost: 'Cost'
+        vat: 'VAT%'
+        price: 'Price'
+        notes: 'Notes'
+        subtotal: 'Sub Total'
+        amount: 'Invoice Amount'
+    articles:
+        credit: 'Package of ''%string%'' messages/month.'
+        ip: 'Purchase of IP ''%string%''.'
+    terms_pay:
+        title: 'Terms of regulation'
+        paybox: 'Paid through Paybox'
+        
+    months:
+        january: 'January'
+        february: 'February'
+        march: 'March'
+        april: 'April'
+        may: 'May'
+        june: 'June'
+        july: 'July'
+        august: 'August'
+        september: 'September'
+        october: 'October'
+        november: 'November'    
+        december: 'December'

@@ -41,6 +41,24 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+<<<<<<< HEAD
+=======
+    globals:
+        diagomail:
+            smtp: smtp.%domain%
+            port: 587
+            user: user@email.com
+            company:
+                name: 'DIAGOMAIL, S.L.'
+                address: 'C/Corcega, 329 8 Pl.'
+                location: '08037 Barcelona - Spain'
+                phone: '+34 93 532 05 05'
+                email: 'invoicing@diagomail.com'
+                vat: 'ESB66931114'
+                cif: 'B-66931114'
+                contact: 'Olivier Jousselin'
+                contact_email: 'jousselin@diagomail.com'
+>>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6
 
 # Doctrine Configuration
 doctrine:
@@ -82,9 +100,31 @@ swiftmailer:
     
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+<<<<<<< HEAD
     user_class: UserBundle\Entity\Users
     firewall_name: tracker
     from_email:
         address: support@%domain%
         sender_name: hidalgosiles
 
+=======
+    user_class: Diagomail\UsersBundle\Entity\Users
+    firewall_name: tracker
+    from_email:
+        address: support@%domain%
+        sender_name: Diagomail
+
+smsupapi:
+    api_id: '%smsupapi_id%'
+    api_secret: '%smsupapi_secret%'
+    
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/bin/wkhtmltopdf
+        options:    []
+    image:
+        enabled:    true
+        binary:     /usr/bin/wkhtmltoimage
+        options:    []
+>>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6

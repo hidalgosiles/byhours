@@ -16,9 +16,19 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+<<<<<<< HEAD
             new FOS\UserBundle\FOSUserBundle(),
             new AppBundle\AppBundle(),
             new UserBundle\UserBundle(),
+=======
+            new AppBundle\AppBundle(),
+            new Diagomail\UsersBundle\DiagomailUsersBundle(),
+            new Diagomail\AppBundle\DiagomailAppBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new smsup\SmsupapiBundle\SmsupapiBundle(),
+            new Lexik\Bundle\PayboxBundle\LexikPayboxBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+>>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

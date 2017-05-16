@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
     "name": "root/byHours",
     "license": "propietary",
     "type": "project",
     "description": "byHours Test",
+=======
+    "name": "root/diagomail-core",
+    "license": "propietary",
+    "type": "project",
+    "description": "Diagomail Core",
+>>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -32,8 +39,29 @@
         "gedmo/doctrine-extensions": "^2.4",
         "symfony/assetic-bundle": "^2.8",
         "stof/doctrine-extensions-bundle": "^1.2",
+<<<<<<< HEAD
         "friendsofsymfony/user-bundle": "dev-master"
     },
+=======
+        "friendsofsymfony/user-bundle": "dev-master",
+        "diagomail/users-bundle": "dev-master",
+        "diagomail/app-bundle": "dev-master",
+        "aws/aws-sdk-php": "^3.22",
+        "lexik/paybox-bundle": "^2.1",
+        "smsup/smsup-api-bundle": "^1.0",
+        "knplabs/knp-snappy-bundle": "^1.4"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://natexo-deployer@bitbucket.org/LeadianceNatexo/diagomail-users-entity.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://natexo-deployer@bitbucket.org/LeadianceNatexo/diagomail-app-entity.git"
+        }
+    ],
+>>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0"
