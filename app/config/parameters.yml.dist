@@ -1,0 +1,29 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host: -
+    database_port: -
+    database_name: -
+    database_user: -
+    database_password: -
+    mailer_transport: smtp
+    mailer_encryption: null
+    mailer_auth_mode:  plain 
+    mailer_host: 185.10.253.73
+    mailer_port: 2050
+    mailer_user: null
+    mailer_password: null
+    secret: d587881fdb1a747c29c1601887dc2472b734bc55
+    recaptcha_public_key: 'public_key'
+    recaptcha_private_key: 'private_key'
+    smsupapi_id: -
+    smsupapi_secret: -
+    blacklist_upload_directory: '/tmp'
+    aws_s3_key: -
+    aws_s3_secret: -
+    aws_s3_region: 'eu-west-2'
+    aws_s3_version: '2006-03-01'
+    aws_cf_distribution: -
+    domain: diagotest.com
+    cname: tracker.pre.diago.email

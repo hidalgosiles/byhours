@@ -1,0 +1,27 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: 5432
+    database_name: diagomail
+    database_user: leadiance
+    database_password: Lead2713
+    mailer_transport: smtp
+    mailer_encryption: null
+    mailer_auth_mode: plain
+    mailer_host: 185.10.253.73
+    mailer_port: 2050
+    mailer_user: smtp_diago
+    mailer_password: gs198DFeJlgH+F/kL4SdIw==
+    secret: d587881fdb1a747c29c1601887dc2472b734bc65
+    aws_s3_key: AKIAJQR7HTPGYZSZKUZA
+    aws_s3_secret: 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
+    aws_s3_region: eu-west-1
+    aws_s3_version: '2006-03-01'
+    aws_cf_distribution: E2L59J8ONW4IDQ
+    recaptcha_public_key: public_key
+    recaptcha_private_key: private_key
+    smsupapi_id: '-'
+    smsupapi_secret: '-'
+    blacklist_upload_directory: /tmp
+    domain: diagotest.com
+    cname: tracker.pre.diago.email

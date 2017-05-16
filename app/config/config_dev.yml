@@ -1,0 +1,49 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_dev.yml"
+        strict_requirements: true
+    profiler: { only_exceptions: false }
+
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
+
+monolog:
+    handlers: 
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: [!event]
+        console:
+            type:   console
+            channels: [!event, !doctrine]
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type:   firephp
+        #    level:  info
+        #chromephp:
+        #    type:   chromephp
+        #    level:  info
+
+#swiftmailer:
+#    delivery_addresses: ['me@example.com']
+
+# Lexik Paybox Bundle
+lexik_paybox:
+    parameters:
+        production: false        # Switches between Paybox test and production servers (preprod-tpe <> tpe)
+        site:        '1999888'   # Site number provided by the bank
+#        rank:        '32'        # Rank number provided by the bank
+        rang:        '32'        # Rang number provided by the bank
+        login:       '107904482' # Customer's login provided by Paybox
+        cle:         '1999888I'
+#        login:       '199988832' # Customer's login provided by Paybox
+        hmac:
+            algorithm:      sha512 # signature algorithm
+            signature_name: Sign   # customize the signature parameter name
+            key: '0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF' # Key used to compute the hmac hash, provided by Paybox 2575483184 2854251958  
