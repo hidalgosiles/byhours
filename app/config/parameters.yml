@@ -2,7 +2,7 @@
 parameters:
     database_host: localhost
     database_port: 5432
-    database_name: diagomail
+    database_name: santiagomail
     database_user: leadiance
     database_password: Lead2713
     mailer_transport: smtp

@@ -82,9 +82,9 @@ swiftmailer:
     
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
-    user_class: Diagomail\UsersBundle\Entity\Users
+    user_class: UserBundle\Entity\Users
     firewall_name: tracker
     from_email:
         address: support@%domain%
-        sender_name: Diagomail
+        sender_name: hidalgosiles
 
