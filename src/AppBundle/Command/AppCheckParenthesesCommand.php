@@ -3,9 +3,10 @@
 namespace AppBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Console\Question\Question;
 
 class AppCheckParenthesesCommand extends ContainerAwareCommand
 {
@@ -21,7 +22,6 @@ class AppCheckParenthesesCommand extends ContainerAwareCommand
             ->setName('app:check-parentheses')
             ->setDescription('Check if a string has well-formed parentheses.')
             ->setHelp('This command check a string with parentheses')
-            ->addArgument('string', InputArgument::REQUIRED, 'String for check')
         ;
     }
 
@@ -32,18 +32,32 @@ class AppCheckParenthesesCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $string = $input->getArgument('string');
         // ==== Initialisation ====
         $this->io = new SymfonyStyle($input, $output);
 
         $this->io->title($this->getDate() . ' Analize a string');
 
         $checkParenthesesHelper = $this->getContainer()->get('check_parentheses.helper');
+
+        // ---- @Symfony\Component\Console\Question\Question ----
+        $helperQuestion = $this->getHelper('question');
+        $question = new Question("Please enter the string:\n");
+        $question->setValidator(function ($answer) {
+            if (trim($answer) == '') {
+                throw new \RuntimeException('Enter a valid string, please');
+            }
+
+            return $answer;
+        });
+
+        // ---- Get the string ----
+        $string = $helperQuestion->ask($input, $output, $question);
+
         $rc = $checkParenthesesHelper->analize($this->io, $string);
-        if (!$rc) {
-            $this->io->error('The string '. $string .' is not well-formed.');
-        } else {
+        if ($rc === true) {
             $this->io->success('The string '. $string. ' is well-formed');
+        } else {
+            $this->io->error('The string '. $string .' is not well-formed.');
         }
     }
 

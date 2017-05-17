@@ -37,27 +37,32 @@ class CheckParenthesesHelper
     {
         $this->io = $poIO;
         $this->count = 0;
+        $response = false;
 
         $this->io->writeln('[' . (date('d-m-Y H:i:s')) . ']' . ' Analizando cadena <info>' . $string . '</info>.');
 
         // If not exist parenthesis exit function
-        if (preg_match('/[\(\)\]/', $string) == false) {
-            $this->io->writeln('The string '.$string.' is has not parentheses.');
+        if (preg_match('/[\\(\\)]/', $string) == false) {
+            $this->io->writeln('The string '.$string.' has not parentheses.');
             return true;
         }
 
-        $rc = $this->checkParentheses($string);
+        $this->checkParentheses($string);
 
-        return $rc;
+        if ($this->count == 0) {
+            $response = true;
+        }
+
+        return $response;
     }
 
     /**
      * Check the string with parenthesis.
      *
      * @param string $string    String for check
-     * @return boolean
+     * @return void
      */
-    private function checkParentheses($string)
+    protected function checkParentheses($string)
     {
         // Get the first chart of string
         $firstChart = substr($string, 0, 1);
@@ -74,17 +79,8 @@ class CheckParenthesesHelper
                 break;
         }
 
-        if ((strlen($newString) == 0) && ($this->count == 0)) {
-            return true;
-        }
-
-        if ((strlen($newString) == 0) && ($this->count != 0)) {
-            return false;
-        }
-
-        // If the string begins with a closed parenthesis
-        if ($this->count < 0) {
-            return false;
+        if (strlen($newString) == 0) {
+            return;
         }
 
         // Check the next character
