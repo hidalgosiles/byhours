@@ -19,25 +19,3 @@ monolog:
             level: debug
         console:
             type:  console
-<<<<<<< HEAD
-=======
-
-lexik_paybox:
-    parameters:
-        currencies:  # Optionnal parameters, this is the default value
-#            - '036'  # AUD
-#            - '124'  # CAD
-#            - '756'  # CHF
-#            - '826'  # GBP
-#            - '840'  # USD
-            - '978'  # EUR
-        site:        '1999888'   # Site number provided by the bank
-        rank:        '32'        # Rank number provided by the bank
-        rang:        '32'        # Rang number provided by the bank
-        login:       '107904482' # Customer's login provided by Paybox
-        cle:         '1999888I'
-        hmac:
-            algorithm:      sha512 # signature algorithm
-            signature_name: Sign   # customize the signature parameter name
-            key: '0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF' # Key used to compute the hmac hash, provided by Paybox 2575483184 2854251958  
->>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6

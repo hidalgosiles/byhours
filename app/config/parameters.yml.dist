@@ -10,28 +10,8 @@ parameters:
     mailer_transport: smtp
     mailer_encryption: null
     mailer_auth_mode:  plain 
-<<<<<<< HEAD
     mailer_host: null
     mailer_port: 25
     mailer_user: null
     mailer_password: null
     secret: d589881fdb1a747c29c1601887dc2472b734fc79
-=======
-    mailer_host: 185.10.253.73
-    mailer_port: 2050
-    mailer_user: null
-    mailer_password: null
-    secret: d587881fdb1a747c29c1601887dc2472b734bc55
-    recaptcha_public_key: 'public_key'
-    recaptcha_private_key: 'private_key'
-    smsupapi_id: -
-    smsupapi_secret: -
-    blacklist_upload_directory: '/tmp'
-    aws_s3_key: -
-    aws_s3_secret: -
-    aws_s3_region: 'eu-west-2'
-    aws_s3_version: '2006-03-01'
-    aws_cf_distribution: -
-    domain: diagotest.com
-    cname: tracker.pre.diago.email
->>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6

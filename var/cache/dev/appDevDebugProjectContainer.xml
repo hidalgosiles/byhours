@@ -17,6 +17,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
+      <parameter key="UserBundle">UserBundle\UserBundle</parameter>
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -69,6 +70,11 @@
         <parameter key="path">/var/www/ivan/byHours/src/AppBundle</parameter>
         <parameter key="namespace">AppBundle</parameter>
       </parameter>
+      <parameter key="UserBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/ivan/byHours/src/UserBundle</parameter>
+        <parameter key="namespace">UserBundle</parameter>
+      </parameter>
       <parameter key="AsseticBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/ivan/byHours/vendor/symfony/assetic-bundle</parameter>
@@ -99,7 +105,7 @@
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port">5432</parameter>
-    <parameter key="database_name">diagomail</parameter>
+    <parameter key="database_name">santiagomail</parameter>
     <parameter key="database_user">leadiance</parameter>
     <parameter key="database_password">Lead2713</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -110,18 +116,6 @@
     <parameter key="mailer_user">hidalgosiles@gmail.com</parameter>
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">d589881fdb1a747c29c1601887dc2472b734fc79</parameter>
-    <parameter key="recaptcha_public_key">public_key</parameter>
-    <parameter key="recaptcha_private_key">private_key</parameter>
-    <parameter key="smsupapi_id">-</parameter>
-    <parameter key="smsupapi_secret">-</parameter>
-    <parameter key="blacklist_upload_directory">/tmp</parameter>
-    <parameter key="aws_s3_key">-</parameter>
-    <parameter key="aws_s3_secret">-</parameter>
-    <parameter key="aws_s3_region">eu-west-2</parameter>
-    <parameter key="aws_s3_version">2006-03-01</parameter>
-    <parameter key="aws_cf_distribution">-</parameter>
-    <parameter key="domain">diagotest.com</parameter>
-    <parameter key="cname">tracker.pre.diago.email</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="locales" type="collection">
       <parameter>en</parameter>
@@ -366,7 +360,7 @@
     <parameter key="fos_user.storage">orm</parameter>
     <parameter key="fos_user.firewall_name">tracker</parameter>
     <parameter key="fos_user.model_manager_name">null</parameter>
-    <parameter key="fos_user.model.user.class">AppBundle\Entity\Users</parameter>
+    <parameter key="fos_user.model.user.class">UserBundle\Entity\Users</parameter>
     <parameter key="fos_user.profile.form.type">FOS\UserBundle\Form\Type\ProfileFormType</parameter>
     <parameter key="fos_user.profile.form.name">fos_user_profile_form</parameter>
     <parameter key="fos_user.profile.form.validation_groups" type="collection">
@@ -374,7 +368,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="support@diagotest.com">hidalgosiles</parameter>
+      <parameter key="hidalgosiles@gmail.com">hidalgosiles</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
     <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
@@ -390,7 +384,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.resetting.email.from_email" type="collection">
-      <parameter key="support@diagotest.com">hidalgosiles</parameter>
+      <parameter key="hidalgosiles@gmail.com">hidalgosiles</parameter>
     </parameter>
     <parameter key="fos_user.resetting.retry_ttl">7200</parameter>
     <parameter key="fos_user.resetting.token_ttl">86400</parameter>
@@ -400,7 +394,7 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
-    <parameter key="mailer.model.class">AppBundle\Model\Mailer</parameter>
+    <parameter key="check_parenthesis.helper.class">AppBundle\Helpers\CheckParenthesisHelper</parameter>
     <parameter key="assetic.asset_factory.class">Symfony\Bundle\AsseticBundle\Factory\AssetFactory</parameter>
     <parameter key="assetic.asset_manager.class">Assetic\Factory\LazyAssetManager</parameter>
     <parameter key="assetic.asset_manager_cache_warmer.class">Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer</parameter>
@@ -426,6 +420,7 @@
       <parameter>SensioFrameworkExtraBundle</parameter>
       <parameter>FOSUserBundle</parameter>
       <parameter>AppBundle</parameter>
+      <parameter>UserBundle</parameter>
       <parameter>AsseticBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
@@ -636,7 +631,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>QbC904L0YY</argument>
                 <argument>0</argument>
-                <argument>4WOwh0sw6oUf4c5dJSCCn5</argument>
+                <argument>6Kc4bvbUufp29aU0sdOO51</argument>
                 <argument>/var/www/ivan/byHours/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -819,7 +814,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>f4U7lM-v7l</argument>
       <argument>0</argument>
-      <argument>4WOwh0sw6oUf4c5dJSCCn5</argument>
+      <argument>6Kc4bvbUufp29aU0sdOO51</argument>
       <argument>/var/www/ivan/byHours/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -829,7 +824,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>2W5Xsp-g1h</argument>
       <argument>0</argument>
-      <argument>4WOwh0sw6oUf4c5dJSCCn5</argument>
+      <argument>6Kc4bvbUufp29aU0sdOO51</argument>
       <argument>/var/www/ivan/byHours/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -956,6 +951,7 @@
             <argument>/var/www/ivan/byHours/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
             <argument>/var/www/ivan/byHours/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml</argument>
             <argument>/var/www/ivan/byHours/app/Resources/translations/AppBundle.es.yml</argument>
+            <argument>/var/www/ivan/byHours/app/Resources/translations/Pdf.es.yml</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>/var/www/ivan/byHours/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.az.xlf</argument>
@@ -1081,6 +1077,7 @@
             <argument>/var/www/ivan/byHours/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.en.xlf</argument>
             <argument>/var/www/ivan/byHours/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
             <argument>/var/www/ivan/byHours/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml</argument>
+            <argument>/var/www/ivan/byHours/app/Resources/translations/Pdf.en.yml</argument>
             <argument>/var/www/ivan/byHours/app/Resources/translations/AppBundle.en.yml</argument>
           </argument>
           <argument key="tr" type="collection">
@@ -1116,6 +1113,7 @@
             <argument>/var/www/ivan/byHours/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.fr.xlf</argument>
             <argument>/var/www/ivan/byHours/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml</argument>
             <argument>/var/www/ivan/byHours/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
+            <argument>/var/www/ivan/byHours/app/Resources/translations/Pdf.fr.yml</argument>
             <argument>/var/www/ivan/byHours/app/Resources/translations/AppBundle.fr.yml</argument>
           </argument>
           <argument key="id" type="collection">
@@ -2203,7 +2201,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>591b5a9d7f9b18.63921352</argument>
+            <argument>591bfba2c51a70.50319865</argument>
           </service>
         </argument>
       </argument>
@@ -2351,7 +2349,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>591b5a9d7f9b18.63921352</argument>
+            <argument>591bfba2c51a70.50319865</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2570,6 +2568,7 @@
               <argument>SensioFrameworkExtraBundle</argument>
               <argument>FOSUserBundle</argument>
               <argument>AppBundle</argument>
+              <argument>UserBundle</argument>
               <argument>AsseticBundle</argument>
               <argument>DebugBundle</argument>
               <argument>WebProfilerBundle</argument>
@@ -2754,7 +2753,7 @@
         <argument key="driver">pdo_pgsql</argument>
         <argument key="host">localhost</argument>
         <argument key="port">5432</argument>
-        <argument key="dbname">diagomail</argument>
+        <argument key="dbname">santiagomail</argument>
         <argument key="user">leadiance</argument>
         <argument key="password">Lead2713</argument>
         <argument key="charset">UTF8</argument>
@@ -2872,6 +2871,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="AppBundle">AppBundle\Entity</argument>
+              <argument key="UserBundle">UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2892,10 +2892,23 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>/var/www/ivan/byHours/src/AppBundle/Entity</argument>
+                        <argument>/var/www/ivan/byHours/src/UserBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>AppBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/var/www/ivan/byHours/src/AppBundle/Entity</argument>
+                        <argument>/var/www/ivan/byHours/src/UserBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>UserBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -3072,7 +3085,7 @@
     </service>
     <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
       <tag name="form.type" alias="fos_user_profile"/>
-      <argument>AppBundle\Entity\Users</argument>
+      <argument>UserBundle\Entity\Users</argument>
     </service>
     <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
@@ -3085,7 +3098,7 @@
     </service>
     <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
       <tag name="form.type" alias="fos_user_registration"/>
-      <argument>AppBundle\Entity\Users</argument>
+      <argument>UserBundle\Entity\Users</argument>
     </service>
     <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
@@ -3098,7 +3111,7 @@
     </service>
     <service id="fos_user.change_password.form.type" class="FOS\UserBundle\Form\Type\ChangePasswordFormType">
       <tag name="form.type" alias="fos_user_change_password"/>
-      <argument>AppBundle\Entity\Users</argument>
+      <argument>UserBundle\Entity\Users</argument>
     </service>
     <service id="fos_user.resetting.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
@@ -3111,13 +3124,14 @@
     </service>
     <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
       <tag name="form.type" alias="fos_user_resetting"/>
-      <argument>AppBundle\Entity\Users</argument>
+      <argument>UserBundle\Entity\Users</argument>
     </service>
     <service id="fos_user.listener.resetting" class="FOS\UserBundle\EventListener\ResettingListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="router"/>
       <argument>86400</argument>
     </service>
+    <service id="check_parenthesis.helper" class="AppBundle\Helpers\CheckParenthesisHelper" lazy="true"/>
     <service id="assetic.filter_manager" class="Symfony\Bundle\AsseticBundle\FilterManager">
       <argument type="service" id="service_container"/>
       <argument type="collection"/>
@@ -3381,6 +3395,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>AppBundle</argument>
                   <argument>/var/www/ivan/byHours/src/AppBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>UserBundle</argument>
+                  <argument>/var/www/ivan/byHours/app/Resources/UserBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>UserBundle</argument>
+                  <argument>/var/www/ivan/byHours/src/UserBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -3990,10 +4031,10 @@
         <argument key="resetting.template">@FOSUser/Resetting/email.txt.twig</argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="support@diagotest.com">hidalgosiles</argument>
+            <argument key="hidalgosiles@gmail.com">hidalgosiles</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="support@diagotest.com">hidalgosiles</argument>
+            <argument key="hidalgosiles@gmail.com">hidalgosiles</argument>
           </argument>
         </argument>
       </argument>
@@ -4009,7 +4050,7 @@
           <factory service="doctrine" method="getManager"/>
         </service>
       </argument>
-      <argument>AppBundle\Entity\Users</argument>
+      <argument>UserBundle\Entity\Users</argument>
     </service>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
@@ -4043,6 +4084,10 @@
       <call method="addPath">
         <argument>/var/www/ivan/byHours/src/AppBundle/Resources/views</argument>
         <argument>App</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/ivan/byHours/src/UserBundle/Resources/views</argument>
+        <argument>User</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/ivan/byHours/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>

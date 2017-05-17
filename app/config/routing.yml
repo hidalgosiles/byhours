@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
     prefix:   /
 
-=======
->>>>>>> 830dc627943de693c1c0a0692160e2b9930cf8b6
 
