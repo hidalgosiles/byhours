@@ -24,7 +24,6 @@ class RoomUserRepository extends EntityRepository {
         $qb->select('upd.firstname', 'upd.lastname', 'SUM(ru.amount) as amount');
         $qb->from('AppBundle:RoomUser', 'ru');
         $qb->innerJoin('ru.user', 'u');
-        $qb->innerJoin('u.userStatus', 'us');
         $qb->innerJoin('u.userPersonalData', 'upd');
         $qb->Where('ru.creationDate = ?1');
         $qb->setParameter(1, $date);
