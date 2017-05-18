@@ -64,6 +64,7 @@ class Country {
      */
     public function __construct() {
         $this->timezone = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->province = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
