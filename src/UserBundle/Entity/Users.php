@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="users",
  *  indexes={@ORM\Index(name="idx_C5D53C5FA76ED395", columns={"user_properties_id"}),
  *           @ORM\Index(name="idx_A175C483A76ED377", columns={"user_personal_data_id"})})
- * @ORM\Entity(repositoryClass="\Repository\UsersRepository")
+ * @ORM\Entity(repositoryClass="\UserBundle\Repository\UsersRepository")
  */
 class Users extends BaseUser
 {
@@ -59,6 +59,12 @@ class Users extends BaseUser
      */
     private $userPersonalData;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\AppBundle\Entity\RoomUser", mappedBy="user")
+     */
+    private $roomUser;
 
     public function __construct()
     {
@@ -198,4 +204,38 @@ class Users extends BaseUser
         return $this->userPersonalData;
     }
 
+
+    /**
+     * Add roomUser
+     *
+     * @param \AppBundle\Entity\RoomUser $roomUser
+     *
+     * @return Users
+     */
+    public function addRoomUser(\AppBundle\Entity\RoomUser $roomUser)
+    {
+        $this->roomUser[] = $roomUser;
+
+        return $this;
+    }
+
+    /**
+     * Remove roomUser
+     *
+     * @param \AppBundle\Entity\RoomUser $roomUser
+     */
+    public function removeRoomUser(\AppBundle\Entity\RoomUser $roomUser)
+    {
+        $this->roomUser->removeElement($roomUser);
+    }
+
+    /**
+     * Get roomUser
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRoomUser()
+    {
+        return $this->roomUser;
+    }
 }

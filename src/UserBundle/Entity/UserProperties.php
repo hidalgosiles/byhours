@@ -13,6 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  *  indexes={@ORM\Index(name="idx_c5d53c5fc6798db", columns={"account_type_id"}),
  *           @ORM\Index(name="idx_c5d53c5f3fe997de", columns={"timezone_id"}),
  *           @ORM\Index(name="idx_c5d53c5f82f1baf4", columns={"language_id"})
+ * })
  * @ORM\Entity
  */
 class UserProperties
@@ -54,9 +55,9 @@ class UserProperties
     private $accountType;
 
     /**
-     * @var \UserBundle\Entity\Timezone
+     * @var \AppBundle\Entity\Timezone
      *
-     * @ORM\ManyToOne(targetEntity="\UsersBundle\Entity\Timezone", inversedBy="userProperties")
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Timezone", inversedBy="userProperties")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="timezone_id", referencedColumnName="id")
      * })
@@ -129,30 +130,6 @@ class UserProperties
     }
 
     /**
-     * Set quotaHourly
-     *
-     * @param float $quotaHourly
-     *
-     * @return UserProperties
-     */
-    public function setQuotaHourly($quotaHourly)
-    {
-        $this->quotaHourly = $quotaHourly;
-
-        return $this;
-    }
-
-    /**
-     * Get quotaHourly
-     *
-     * @return float
-     */
-    public function getQuotaHourly()
-    {
-        return $this->quotaHourly;
-    }
-
-    /**
      * Set accountType
      *
      * @param \Diagomail\UsersBundle\Entity\AccountType $accountType
@@ -177,37 +154,13 @@ class UserProperties
     }
 
     /**
-     * Set reputationLevel
-     *
-     * @param \Diagomail\UsersBundle\Entity\UserReputationLevel $reputationLevel
-     *
-     * @return UserProperties
-     */
-    public function setReputationLevel(\Diagomail\UsersBundle\Entity\UserReputationLevel $reputationLevel = null)
-    {
-        $this->reputationLevel = $reputationLevel;
-
-        return $this;
-    }
-
-    /**
-     * Get reputationLevel
-     *
-     * @return \Diagomail\UsersBundle\Entity\UserReputationLevel
-     */
-    public function getReputationLevel()
-    {
-        return $this->reputationLevel;
-    }
-
-    /**
      * Set timezone
      *
-     * @param \Diagomail\UsersBundle\Entity\Timezone $timezone
+     * @param \AppBundle\Entity\Timezone $timezone
      *
      * @return UserProperties
      */
-    public function setTimezone(\Diagomail\UsersBundle\Entity\Timezone $timezone = null)
+    public function setTimezone(\AppBundle\Entity\Timezone $timezone = null)
     {
         $this->timezone = $timezone;
 
@@ -217,7 +170,7 @@ class UserProperties
     /**
      * Get timezone
      *
-     * @return \Diagomail\UsersBundle\Entity\Timezone
+     * @return \AppBundle\Entity\Timezone
      */
     public function getTimezone()
     {
@@ -227,11 +180,11 @@ class UserProperties
     /**
      * Set languages
      *
-     * @param \Diagomail\UsersBundle\Entity\Languages $languages
+     * @param \UserBundle\Entity\Languages $languages
      *
      * @return UserProperties
      */
-    public function setLanguages(\Diagomail\UsersBundle\Entity\Languages $languages = null)
+    public function setLanguages(\UserBundle\Entity\Languages $languages = null)
     {
         $this->languages = $languages;
 
@@ -241,7 +194,7 @@ class UserProperties
     /**
      * Get languages
      *
-     * @return \Diagomail\UsersBundle\Entity\Languages
+     * @return \UserBundle\Entity\Languages
      */
     public function getLanguages()
     {
@@ -251,11 +204,11 @@ class UserProperties
     /**
      * Set user
      *
-     * @param \Diagomail\UsersBundle\Entity\Users $user
+     * @param \UserBundle\Entity\Users $user
      *
      * @return UserProperties
      */
-    public function setUser(\Diagomail\UsersBundle\Entity\Users $user = null)
+    public function setUser(\UserBundle\Entity\Users $user = null)
     {
         $this->user = $user;
 
@@ -265,59 +218,11 @@ class UserProperties
     /**
      * Get user
      *
-     * @return \Diagomail\UsersBundle\Entity\Users
+     * @return \UserBundle\Entity\Users
      */
     public function getUser()
     {
         return $this->user;
-    }
-
-    /**
-     * Set company
-     *
-     * @param \Diagomail\UsersBundle\Entity\Company $company
-     *
-     * @return UserProperties
-     */
-    public function setCompany(\Diagomail\UsersBundle\Entity\Company $company = null)
-    {
-        $this->company = $company;
-
-        return $this;
-    }
-
-    /**
-     * Get company
-     *
-     * @return \Diagomail\UsersBundle\Entity\Company
-     */
-    public function getCompany()
-    {
-        return $this->company;
-    }
-
-    /**
-     * Set creditPackage
-     *
-     * @param \Diagomail\AppBundle\Entity\CreditPackages $creditPackage
-     *
-     * @return UserProperties
-     */
-    public function setCreditPackage(\Diagomail\AppBundle\Entity\CreditPackages $creditPackage = null)
-    {
-        $this->creditPackage = $creditPackage;
-
-        return $this;
-    }
-
-    /**
-     * Get creditPackage
-     *
-     * @return \Diagomail\AppBundle\Entity\CreditPackages
-     */
-    public function getCreditPackage()
-    {
-        return $this->creditPackage;
     }
 
     /**
@@ -345,40 +250,6 @@ class UserProperties
     }
 
     /**
-     * Add creditBalanceTransaction
-     *
-     * @param \Diagomail\AppBundle\Entity\CreditBalanceTransaction $creditBalanceTransaction
-     *
-     * @return UserProperties
-     */
-    public function addCreditBalanceTransaction(\Diagomail\AppBundle\Entity\CreditBalanceTransaction $creditBalanceTransaction)
-    {
-        $this->creditBalanceTransaction[] = $creditBalanceTransaction;
-
-        return $this;
-    }
-
-    /**
-     * Remove creditBalanceTransaction
-     *
-     * @param \Diagomail\AppBundle\Entity\CreditBalanceTransaction $creditBalanceTransaction
-     */
-    public function removeCreditBalanceTransaction(\Diagomail\AppBundle\Entity\CreditBalanceTransaction $creditBalanceTransaction)
-    {
-        $this->creditBalanceTransaction->removeElement($creditBalanceTransaction);
-    }
-
-    /**
-     * Get creditBalanceTransaction
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCreditBalanceTransaction()
-    {
-        return $this->creditBalanceTransaction;
-    }
-
-    /**
      * Set advertiserId
      *
      * @param string $advertiserId
@@ -402,51 +273,4 @@ class UserProperties
         return $this->advertiserId;
     }
 
-    /**
-     * Set advertiserCpm
-     *
-     * @param float $advertiserCpm
-     *
-     * @return UserProperties
-     */
-    public function setAdvertiserCpm($advertiserCpm)
-    {
-        $this->advertiserCpm = $advertiserCpm;
-
-        return $this;
-    }
-
-    /**
-     * Get advertiserCpm
-     *
-     * @return float
-     */
-    public function getAdvertiserCpm()
-    {
-        return $this->advertiserCpm;
-    }
-
-    /**
-     * Set manualQuota
-     *
-     * @param boolean $manualQuota
-     *
-     * @return UserProperties
-     */
-    public function setManualQuota($manualQuota)
-    {
-        $this->manualQuota = $manualQuota;
-
-        return $this;
-    }
-
-    /**
-     * Get manualQuota
-     *
-     * @return boolean
-     */
-    public function getManualQuota()
-    {
-        return $this->manualQuota;
-    }
 }

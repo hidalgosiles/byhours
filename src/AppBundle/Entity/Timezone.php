@@ -1,5 +1,5 @@
 <?php
-namespace UserBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="timezone",
  *  uniqueConstraints={@ORM\UniqueConstraint(name="timezone_id_key", columns={"id"})},
  *  indexes={@ORM\Index(name="idx_f1322edb9f2c3fab", columns={"country_id"})})
- * @ORM\Entity(repositoryClass="\UserBundle\Entity\Repository\TimezoneRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TimezoneRepository")
  */
 class Timezone
 {
@@ -36,9 +36,9 @@ class Timezone
     private $description;
 
     /**
-     * @var \UserBundle\Entity\Country
+     * @var \AppBundle\Entity\Country
      *
-     * @ORM\ManyToOne(targetEntity="\UserBundle\Entity\Country", inversedBy="timezone")
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Country", inversedBy="timezone")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      * })
@@ -136,11 +136,11 @@ class Timezone
     /**
      * Set country
      *
-     * @param \UserBundle\Entity\Country $country
+     * @param \AppBundle\Entity\Country $country
      *
      * @return Timezone
      */
-    public function setCountry(\UserBundle\Entity\Country $country = null)
+    public function setCountry(\AppBundle\Entity\Country $country = null)
     {
         $this->country = $country;
 
@@ -150,7 +150,7 @@ class Timezone
     /**
      * Get country
      *
-     * @return \UserBundle\Entity\Country
+     * @return \AppBundle\Entity\Country
      */
     public function getCountry()
     {

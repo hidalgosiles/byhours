@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="account_type",
  *  uniqueConstraints={@ORM\UniqueConstraint(name="account_type_id_key", columns={"id"})})
- * @ORM\Entity(repositoryClass="\UserBundle\Entity\Repository\AccountTypeRepository")
+ * @ORM\Entity(repositoryClass="\UserBundle\Repository\AccountTypeRepository")
  */
 class AccountType {
 

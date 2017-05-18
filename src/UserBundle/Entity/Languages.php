@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="languages",
  *  uniqueConstraints={@ORM\UniqueConstraint(name="languages_id_key", columns={"id"})})
- * @ORM\Entity(repositoryClass="\UserBundle\Entity\Repository\LanguagesRepository")
+ * @ORM\Entity(repositoryClass="\UserBundle\Repository\LanguagesRepository")
  */
 class Languages {
 

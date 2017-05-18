@@ -1,6 +1,6 @@
 <?php
 
-namespace UserBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="country",
  *  uniqueConstraints={@ORM\UniqueConstraint(name="country_id_key", columns={"id"})})
- * @ORM\Entity(repositoryClass="\UserBundle\Entity\Repository\CountryRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CountryRepository")
  */
 class Country {
 
@@ -44,9 +44,16 @@ class Country {
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\OneToMany(targetEntity="\UserBundle\Entity\Timezone", mappedBy="country")
+     * @ORM\OneToMany(targetEntity="\AppBundle\Entity\Timezone", mappedBy="country")
      */
     private $timezone;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\AppBundle\Entity\Province", mappedBy="country")
+     */
+    private $province;
 
     public function __toString() {
         return $this->getName();
@@ -112,4 +119,72 @@ class Country {
         return $this->countryCode;
     }
 
+
+    /**
+     * Add timezone
+     *
+     * @param \AppBundle\Entity\Timezone $timezone
+     *
+     * @return Country
+     */
+    public function addTimezone(\AppBundle\Entity\Timezone $timezone)
+    {
+        $this->timezone[] = $timezone;
+
+        return $this;
+    }
+
+    /**
+     * Remove timezone
+     *
+     * @param \AppBundle\Entity\Timezone $timezone
+     */
+    public function removeTimezone(\AppBundle\Entity\Timezone $timezone)
+    {
+        $this->timezone->removeElement($timezone);
+    }
+
+    /**
+     * Get timezone
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * Add province
+     *
+     * @param \AppBundle\Entity\Province $province
+     *
+     * @return Country
+     */
+    public function addProvince(\AppBundle\Entity\Province $province)
+    {
+        $this->province[] = $province;
+
+        return $this;
+    }
+
+    /**
+     * Remove province
+     *
+     * @param \AppBundle\Entity\Province $province
+     */
+    public function removeProvince(\AppBundle\Entity\Province $province)
+    {
+        $this->province->removeElement($province);
+    }
+
+    /**
+     * Get province
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
 }
